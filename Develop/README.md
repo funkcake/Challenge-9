@@ -1,6 +1,6 @@
-#Read me creater
+#ReadMe Maker
 
-Description: makes a readme document
+Description: Makes a Read me document
     
 ###Table of contents
 * [Installation](#installation)
@@ -10,19 +10,19 @@ Description: makes a readme document
 * [Questions](#questions)
 
 ###Installation
-download it
+DownLoad and open in console
 
 ###Usage
-used to create a read me
+Can be used to make a Readme
 
 ###Contribution
-make an acount
+Send an Email to me at the listed address
 
 ###Test
-enter the info for your project
+Enter your info and cheak the ReadMe
 
 ###Questions
 Contact info
-Name: Brian Casto
+Name: Brian
 Github: [funkcake](https://github.com/funkcake)
 Please email me with any questions at casto@gmail.com
