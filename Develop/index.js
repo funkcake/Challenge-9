@@ -4,7 +4,7 @@ const inquirer = require('inquirer');
 //const generatePage = require('./src/page-template');
 // TODO: Create an array of questions for user input
 const questions = () => {
-    return inquirer.prompt([
+    inquirer.prompt([
     {
         type: 'input',
         name: 'name',
@@ -56,11 +56,6 @@ const questions = () => {
     },
     {   
         type: 'input',
-        name: "table of content",
-        message: "Please provide a table on content"
-    },
-    {   
-        type: 'input',
         name: "installation",
         message: "What is the installation process?"
     },
@@ -78,7 +73,7 @@ const questions = () => {
     {   
         type: 'input',
         name: "contribution",
-        message: "Who were the contributors to this project?"
+        message: "How to contribute to this project?"
         
     },
     {   
@@ -86,16 +81,52 @@ const questions = () => {
         name: "test",
         message: "What is the test process for this project?"
     }
-]);
+]).then(data => {
+    //console.log(data);
+    const newData = `#${data.title}
+
+Description: ${data.description}
+    
+###Table of contents
+* [Installation](#installation)
+* [Usage](#usage)
+* [Contribution](#contribution)
+* [Test](#test)
+* [Questions](#questions)
+
+###Installation
+${data.installation}
+
+###Usage
+${data.usage}
+
+###Contribution
+${data.contribution}
+
+###Test
+${data.test}
+
+###Questions
+Contact info
+Name: ${data.name}
+Github: [${data.github}](https://github.com/${data.github})
+Please email me with any questions at ${data.email}`;
+    writeToFile('README.md', newData);
+});
 };
 
 questions();
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, function (err) {
+        if (err) throw err;
+        console.log('Saved');
+    })
+    
+}
 
 // TODO: Create a function to initialize app
 function init() {}
-
 // Function call to initialize app
 init();
