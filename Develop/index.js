@@ -60,7 +60,7 @@ const questions = () => {
         message: "What is the installation process?"
     },
     {   
-        tpye: 'input',
+        type: 'input',
         name: "usage",
         message: "How will this project be used?"
     },
@@ -77,7 +77,7 @@ const questions = () => {
         
     },
     {   
-        tpye: 'input',
+        type: 'input',
         name: "test",
         message: "What is the test process for this project?"
     }
